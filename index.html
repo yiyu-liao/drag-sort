@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <style>
+      #app {
+        padding: 40px;
+      }
+      .wrapper {
+        position: relative;
+      }
+      .label {
+        position: absolute;
+        z-index: 1;
+        height: 40px;
+        line-height: 40px;
+        width: 160px;
+        padding-left: 20px;
+        border: 1px solid #cccccc;
+        transition: all 0.5s;
+        cursor: move;
+      }
+      .label::before {
+        content: attr(data-sort);
+        position: absolute;
+        left: 4px;
+      }
+      .label.highlight::before {
+        color: #fff;
+      }
+      .highlight {
+        background-color: #3564eb;
+        opacity: 0.9;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app">
+      <h3>实现移动端拖拽排序</h3>
+      <div id="wrapper" class="wrapper"></div>
+    </div>
+    <script src="src/sort.ts"></script>
+  </body>
+</html>
